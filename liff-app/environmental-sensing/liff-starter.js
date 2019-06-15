@@ -212,10 +212,10 @@ async function refreshValues(device) {
         return null;
     });
 
-    //if (pressureBuffer !== null) {
-        const pressureValue = 50;//pressureBuffer.getUint32(0, true) / 10.0 / 100.0;//test const
+    if (pressureBuffer !== null) {
+        const pressureValue = pressureBuffer.getUint32(0, true) / 10.0 / 100.0;//test const
         getDevicePressureField(device).innerText = `${pressureValue} hPa`;
-   // }
+    }
     if (temperatureBuffer !== null) {
         const temperatureValue = temperatureBuffer.getInt16(0, true) / 100.0;
         getDeviceTemperatureField(device).innerText = `${temperatureValue} ℃`;
