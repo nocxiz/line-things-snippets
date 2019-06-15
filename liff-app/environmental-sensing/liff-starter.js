@@ -213,7 +213,7 @@ async function refreshValues(device) {
     });
 
     if (pressureBuffer !== null) {
-        const pressureValue = pressureBuffer.getUint32(0, true) / 10.0 / 100.0;
+        const pressureValue = 100;//pressureBuffer.getUint32(0, true) / 10.0 / 100.0;//test const
         getDevicePressureField(device).innerText = `${pressureValue} hPa`;
     }
     if (temperatureBuffer !== null) {
