@@ -210,16 +210,16 @@ function updateConnectionStatus(device, status) {
 }
 
 async function refreshValues(device) {
-    const pressureCharacteristic = await getCharacteristic(
-        device, ENVIRONMENTAL_SENSING_SERVICE_UUID, PRESSURE_CHARACTERISTIC_UUID);
+//     const pressureCharacteristic = await getCharacteristic(
+//         device, ENVIRONMENTAL_SENSING_SERVICE_UUID, PRESSURE_CHARACTERISTIC_UUID);
     const temperatureCharacteristic = await getCharacteristic(
         device, ENVIRONMENTAL_SENSING_SERVICE_UUID, TEMPERATURE_CHARACTERISTIC_UUID);
     const humidityCharacteristic = await getCharacteristic(
         device, ENVIRONMENTAL_SENSING_SERVICE_UUID, HUMIDTY_CHARACTERISTIC_UUID);
 
-    const pressureBuffer = await readCharacteristic(pressureCharacteristic).catch(e => {
-        return null;
-    });
+//     const pressureBuffer = await readCharacteristic(pressureCharacteristic).catch(e => {
+//         return null;
+//     });
     const temperatureBuffer = await readCharacteristic(temperatureCharacteristic).catch(e => {
         return null;
     });
@@ -300,9 +300,9 @@ function getDeviceHumidityField(device) {
     return getDeviceCard(device).getElementsByClassName('humidity-value')[0];
 }
 
-function getDevicePressureField(device) {
-    return getDeviceCard(device).getElementsByClassName('pressure-value')[0];
-}
+// function getDevicePressureField(device) {
+//     return getDeviceCard(device).getElementsByClassName('pressure-value')[0];
+// }
 
 function renderVersionField() {
     const element = document.getElementById('sdkversionfield');
