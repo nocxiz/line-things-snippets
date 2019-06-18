@@ -308,3 +308,47 @@ function sleep(ms) {
 function buf2hex(buffer) { // buffer is an ArrayBuffer
     return Array.prototype.map.call(new Uint8Array(buffer), x => ('00' + x.toString(16)).slice(-2)).join('');
 }
+// ----------------- //
+// Handler functions //
+// ----------------- //
+
+function handlerToggleLed() {
+    ledState = !ledState;
+
+    uiToggleLedButton(ledState);
+    liffToggleDeviceLedState(ledState);
+}
+
+// ------------ //
+// UI functions //
+// ------------ //
+
+function uiToggleLedButton(state) {
+    const el = document.getElementById("btn-led-toggle");
+    el.innerText = state ? "Switch LED OFF" : "Switch LED ON";
+
+    if (state) {
+      el.classList.add("led-on");
+    } else {
+      el.classList.remove("led-on");
+    }
+}
+
+function uiCountPressButton() {
+    clickCount++;
+
+    const el = document.getElementById("click-count");
+    el.innerText = clickCount;
+}
+
+function uiToggleStateButton(pressed) {
+    const el = document.getElementById("btn-state");
+
+    if (pressed) {
+        el.classList.add("pressed");
+        el.innerText = "Pressed";
+    } else {
+        el.classList.remove("pressed");
+        el.innerText = "Released";
+    }
+}
