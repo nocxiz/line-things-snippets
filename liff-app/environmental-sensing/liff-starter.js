@@ -3,6 +3,21 @@ const PRESSURE_CHARACTERISTIC_UUID = "00002A6D-0000-1000-8000-00805F9B34FB";
 const TEMPERATURE_CHARACTERISTIC_UUID = "00002A6E-0000-1000-8000-00805F9B34FB";
 const HUMIDTY_CHARACTERISTIC_UUID = "00002A6F-0000-1000-8000-00805F9B34FB";
 
+// User service UUID: Change this to your generated service UUID
+const USER_SERVICE_UUID         = '4682E645-69BC-4E8A-957C-81D3B24015BB'//'4682E645-69BC-4E8A-957C-81D3B24015BB'; // LED, Button
+// User service characteristics
+const LED_CHARACTERISTIC_UUID   = 'E9062E71-9E62-4BC6-B0D3-35CDCD9B027B';
+const BTN_CHARACTERISTIC_UUID   = '62FBD229-6EDD-4D1A-B554-5C4E1BB29169';
+
+// PSDI Service UUID: Fixed value for Developer Trial
+const PSDI_SERVICE_UUID         = 'E625601E-9E55-4597-A598-76018A0D293D'; // Device ID
+const PSDI_CHARACTERISTIC_UUID  = '26E2B12B-85F0-4F3F-9FDD-91D114270E6E';
+
+// UI settings
+let ledState = false; // true: LED on, false: LED off
+let clickCount = 0;
+
+
 const deviceUUIDSet = new Set();
 const connectedUUIDSet = new Set();
 const connectingUUIDSet = new Set();
