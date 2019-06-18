@@ -68,9 +68,17 @@
                
           
                 
-          <div id="controls" class="hidden">
-          
-          <!-- Device Info Table -->
+          <body>
+    <!-- Title -->
+    <h2>LINE Things Starter</h2>
+    <hr />
+    <p>
+      <img id="loading-animation" class="" src="loading.gif" height="14px" />
+      <span id="status" class="inactive">Device disconnected</span>
+    </p>
+    <hr />
+    <div id="controls" class="hidden">
+      <!-- Device Info Table -->
       <table class="device-info-table">
         <tr>
           <th class="device-info-cell device-info-key">Name</th>
@@ -95,13 +103,14 @@
           <td class="device-info-cell device-info-val" id="click-count">0</td>
         </tr>
       </table>
-            <hr />
+      <hr />
       <!-- Toggle LED -->
       <p>
         <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">Switch LED ON</button>
       </p>
       <hr />
     </div>
+  </body>
           <!--<div class="d-flex align-items-center justify-content-between text-center mb-3">
             <div class="w-25">
               <i class="fas fa-tachometer-alt"></i>
